@@ -1,13 +1,121 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Mukta", sans-serif;
+}
+
+@layer components {
+  .app {
+    @apply mx-auto text-center;
+  }
+
+  .search-form {
+    @apply flex flex-col items-center justify-around bg-[#98D7C2] text-white h-40 mx-auto my-auto p-2;
+  }
+
+  .discover {
+    @apply flex items-center justify-between text-2xl;
+  }
+
+  .searching {
+    @apply flex flex-col items-center;
+  }
+
+  .search-bar {
+    @apply w-64 rounded-full  text-black px-3 py-2;
+  }
+
+  .search-button {
+    @apply w-auto bg-[#DDFFE7] text-black rounded-full font-bold tracking-widest px-4 py-1 mt-2;
+  }
+
+  .recipe {
+    @apply h-[450px] my-6 mx-4 p-4 rounded-lg shadow-lg;
+  }
+
+  .info {
+    @apply flex flex-col;
+  }
+
+  /* .flipper {
+    @apply w-[100%] h-[100%] relative transition duration-700 rotate-y-180;
+  }
+
+  .front-card,
+  .back-card {
+    @apply absolute w-[100%] h-[100%];
+    backface-visibility: hidden;
+  }
+
+  .back-card {
+    @apply rotate-y-180;
+  } */
+
+  .meal {
+    @apply w-full pt-5;
+  }
+
+  .title {
+    @apply font-bold text-2xl pb-5;
+  }
+
+  .time {
+    @apply flex items-center justify-between;
+  }
+
+  .type {
+    @apply flex items-center justify-between capitalize;
+  }
+
+  .details {
+    @apply flex justify-around;
+  }
+
+  .img {
+    @apply rounded-xl;
+  }
+  /* 
+  .ingredients {
+    @apply hidden;
+  } */
+}
+
+.flipper {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.recipe:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.front-card,
+.back-card {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.fron-card {
+  transform: rotateY(0deg);
+}
+
+.back-card {
+  transform: rotateY(180deg);
 }
