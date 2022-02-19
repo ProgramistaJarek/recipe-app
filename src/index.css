@@ -41,26 +41,12 @@ body {
   }
 
   .recipe {
-    @apply h-[450px] my-6 mx-4 p-4 rounded-lg shadow-lg;
+    @apply h-[450px] w-[300px] my-6 mx-4 p-4 rounded-lg shadow-lg;
   }
 
   .info {
-    @apply flex flex-col;
+    @apply flex flex-col items-center;
   }
-
-  /* .flipper {
-    @apply w-[100%] h-[100%] relative transition duration-700 rotate-y-180;
-  }
-
-  .front-card,
-  .back-card {
-    @apply absolute w-[100%] h-[100%];
-    backface-visibility: hidden;
-  }
-
-  .back-card {
-    @apply rotate-y-180;
-  } */
 
   .meal {
     @apply w-full pt-5;
@@ -85,10 +71,18 @@ body {
   .img {
     @apply rounded-xl;
   }
-  /* 
+
   .ingredients {
-    @apply hidden;
-  } */
+    @apply list-disc list-inside p-4 pt-1 bg-white;
+  }
+
+  .ingredients li {
+    @apply pt-2;
+  }
+
+  main {
+    @apply flex flex-wrap justify-center w-full;
+  }
 }
 
 .flipper {
@@ -112,7 +106,7 @@ body {
   height: 100%;
 }
 
-.fron-card {
+.front-card {
   transform: rotateY(0deg);
 }
 

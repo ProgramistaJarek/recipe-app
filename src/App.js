@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Recipe from "./components/Recipe";
 import { RiEmotionHappyLine } from "react-icons/ri";
 import "animate.css";
-import config from "./config";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -54,12 +53,14 @@ function App() {
       <main>
         {recipes.map((r) => (
           <Recipe
-            key={r.recipe.label}
+            key={r.recipe.shareAs}
             title={r.recipe.label}
             calories={r.recipe.calories}
             time={r.recipe.totalTime}
             type={r.recipe.mealType}
-            img={r.recipe.image}
+            img={r.recipe.images.REGULAR.url}
+            imgWidth={r.recipe.images.REGULAR.width}
+            imgHeight={r.recipe.images.REGULAR.height}
             ingred={r.recipe.ingredients}
           />
         ))}

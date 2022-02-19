@@ -9,7 +9,7 @@ function Recipe(props) {
       <div className="flipper">
         <div className="front-card">
           <div className="info">
-            <img className="img" src={props.img} />
+            <img className="img" width={props.imgWidth} height={props.imgHeight} src={props.img} alt={props.title} />
             <div className="meal">
               <h1 className="title">{props.title}</h1>
               <div className="details">
@@ -27,7 +27,7 @@ function Recipe(props) {
           </div>
         </div>
         <div className="back-card">
-          <Ingredients key={props.title} ingred={props.ingred} />
+          <Ingredients ingred={props.ingred} />
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@ function Recipe(props) {
 const Ingredients = (props) => {
   return (
     <ol className="ingredients">
-      {props.ingred.map((ingredient) => (
-        <li>{ingredient.text}</li>
+      {props.ingred.map((ingredient, index) => (
+        <li key={index}>{ingredient.text}</li>
       ))}
     </ol>
   );
